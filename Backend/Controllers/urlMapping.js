@@ -2,7 +2,7 @@ const { models : {UrlMapping}} = require ('../Models')
 const crypto = require('crypto');
 require("dotenv").config()
 const getenv = require('../Middlewares/env')
-
+    
 
 module.exports = {
 

@@ -8,5 +8,3 @@ client.on("error", (err)=>{
 client.on("connect", (err)=>{
     console.log("Redis connection established");
 })
-
-client.set("keyFromNode", "Hello World",redis.print);
