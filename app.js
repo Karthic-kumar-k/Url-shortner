@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
+const db = require('./db-initializer');
+const client = require('./redis-connection');
+const conn = client();
 
-const db = require('./Backend/Models');
 
-// IIFE function 
 (async () => {
-    await db.sequelize.sync();
+    await conn.connect();
 })();
 
-app.use(express.json())
+app.use(express.json());
 
-require('./Backend/Routes/createUrl')(app)
-require('./Backend/Routes/serverCheck')(app)
-require('./Backend/Routes/getUrl')(app)
+//Route Files
+require('./Backend/Routes/createUrl')(app);
+require('./Backend/Routes/serverCheck')(app);
+require('./Backend/Routes/getUrl')(app, conn);
 
-app.listen("8081",() => {console.log("app started in 8081");})
+app.listen("8081",() => {console.log("app started in 8081");});
