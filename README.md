@@ -8,7 +8,7 @@ method : POST
 Req type : application/json
 request : { url : "url you want to short"}
 
-response : {"url": "www.tiny.in/g/3e723b"} //shortened URL
+response : {"url": "www.tiny.in/g/:hash"} //shortened URL
 
 --------------------------------------------------
 
