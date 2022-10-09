@@ -6,7 +6,7 @@ Returns a short url which will redirect to your actual url page.
 Route :  /v1/createUrl
 method : POST
 Req type : application/json
-\nrequest : { url : "url you want to short"}
+request : { url : "url you want to short"}
 
 response : {"url": "www.tiny.in/g/:hash"} //shortened URL
 
