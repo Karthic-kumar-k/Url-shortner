@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) =>{
         (   'UrlMapping' , 
         
         {   transformedUrl : DataTypes.STRING,
-            actualUrl : DataTypes.STRING
+            actualUrl : {
+                type : DataTypes.STRING,
+                unique : true
+            }
         } , 
         
         {   freezeTableName : true

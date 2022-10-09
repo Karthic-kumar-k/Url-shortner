@@ -1,5 +1,7 @@
 const {urlMapping}  =require('../Controllers')
 
-module.exports = function(app){
-    app.get("/g/:url" ,urlMapping.findOne)
+module.exports = async function(app, redisConnection){
+    app.get("/g/:url" , (req, res) =>{
+        return urlMapping.findOne(req, res, redisConnection)
+    });
 }
